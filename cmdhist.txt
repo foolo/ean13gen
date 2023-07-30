@@ -1,3 +1,4 @@
 npm install jsbarcode --save
 npm install xmldom --save
 npm i --save-dev @types/xmldom
+npm install react-number-format
