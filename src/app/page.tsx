@@ -1,8 +1,21 @@
 import Image from 'next/image'
+import JsBarcode from 'jsbarcode';
+import { DOMImplementation, XMLSerializer } from 'xmldom';
 
 export default function Home() {
+
+  const xmlSerializer = new XMLSerializer();
+  const document = new DOMImplementation().createDocument('http://www.w3.org/1999/xhtml', 'html', null);
+  const svgNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  JsBarcode(svgNode, 'test', { xmlDocument: document });
+  const svgText = xmlSerializer.serializeToString(svgNode);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Image
+        src={`data:image/svg+xml;utf8,${encodeURIComponent(svgText)}`}
+        alt={'Generated barcode'}
+      />
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
