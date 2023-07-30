@@ -19,10 +19,8 @@ export default function Home() {
 	};
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<Image
+			<img
 				src={`data:image/svg+xml;utf8,${encodeURIComponent(svgText)}`}
-				width={100}
-				height={100}
 				alt={'Generated barcode'}
 			/>
 			<PatternFormat format="# ###### ######" allowEmptyFormatting mask="_" onChange={handleInput} />;
