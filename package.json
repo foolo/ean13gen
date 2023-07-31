@@ -6,6 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
+		"generate-barcode-placeholder": "tsx scripts/generate-barcode-placeholder.ts",
 		"lint": "next lint"
 	},
 	"dependencies": {
@@ -24,6 +25,7 @@
 		"xmldom": "^0.6.0"
 	},
 	"devDependencies": {
-		"@types/xmldom": "^0.1.31"
+		"@types/xmldom": "^0.1.31",
+		"tsx": "^3.12.7"
 	}
 }

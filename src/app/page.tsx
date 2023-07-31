@@ -10,6 +10,7 @@ export default function Home() {
 	const xmlSerializer = new XMLSerializer();
 	const document = new DOMImplementation().createDocument('http://www.w3.org/1999/xhtml', 'html', null);
 	const svgNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+	const blurNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 	const [svgText, setSvgText] = useState<string | null>(null)
 	const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
@@ -40,7 +41,7 @@ export default function Home() {
 					src={`data:image/svg+xml;utf8,${encodeURIComponent(svgText)}`}
 					alt={'Generated barcode'}
 				/> :
-				'…'}
+				<img src="/barcode-placeholder.svg" alt={'Barcode placeholder'} /> }
 
 			<PatternFormat format="# ###### ######" allowEmptyFormatting mask="_" onChange={handleInput} />
 			{errorMessage && <span>{errorMessage}</span>}
