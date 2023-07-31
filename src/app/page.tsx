@@ -10,7 +10,6 @@ export default function Home() {
 	const xmlSerializer = new XMLSerializer();
 	const document = new DOMImplementation().createDocument('http://www.w3.org/1999/xhtml', 'html', null);
 	const svgNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-	const blurNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 	const [svgText, setSvgText] = useState<string | null>(null)
 	const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
