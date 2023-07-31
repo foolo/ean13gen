@@ -18,6 +18,10 @@ export default function Home() {
 		setErrorMessage(null)
 		setSvgText(null)
 		const inputText = evt.target.value;
+		let cursorPos = evt.target.selectionStart || 0
+		if (inputText[cursorPos] == ' ') {
+			evt.target.setSelectionRange(cursorPos + 1, cursorPos + 1)
+		}
 		let inputDigits = inputText.replaceAll(/\D/g, '')
 		if (inputDigits.length != 13) {
 			return
