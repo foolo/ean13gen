@@ -1,0 +1,15 @@
+{
+	"name": "EAN13Gen PWA app",
+	"short_name": "EAN13Gen",
+	"icons": [
+		{
+			"src": "/icons/Basket.svg",
+			"sizes": "any"
+		}
+	],
+	"theme_color": "#FFFFFF",
+	"background_color": "#FFFFFF",
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait"
+}
