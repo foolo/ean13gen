@@ -36,22 +36,27 @@ export default function Home() {
 			setSvgText(null);
 		}
 	};
-	return (
-		<main>
-			{svgText ?
-				<img
-					src={`data:image/svg+xml;utf8,${encodeURIComponent(svgText)}`}
-					alt={'Generated barcode'}
-				/> :
-				<img src="/barcode-placeholder.svg" alt={'Barcode placeholder'} /> }
 
+	return (
+		<main className='text-center'>
+			<div className='flex justify-center items-center'>
+				{svgText ?
+					<img
+						src={`data:image/svg+xml;utf8,${encodeURIComponent(svgText)}`}
+						alt={'Generated barcode'}
+					/> :
+					<img src="/barcode-placeholder.svg" alt={'Barcode placeholder'} />
+				}
+			</div>
 			<PatternFormat
 				format="# ###### ######"
 				allowEmptyFormatting mask="_"
 				onChange={handleInput}
-				className='font-mono p-2 text-xl'
+				className='font-mono p-2 text-xl text-center'
 			/>
-			{errorMessage && <span>{errorMessage}</span>}
+			<div>
+				{errorMessage && <span>{errorMessage}</span>}
+			</div>
 		</main>
 	)
 }
