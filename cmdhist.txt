@@ -1,7 +1,0 @@
-npm install jsbarcode --save
-npm install xmldom --save
-npm i --save-dev @types/xmldom
-npm install react-number-format
-
-https://stackoverflow.com/questions/72196364/how-to-run-a-standalone-cli-script-using-a-nextjs-project/74669154#74669154
-npm install --save-dev tsx
