@@ -55,7 +55,9 @@ export default function Home() {
 				className='font-mono p-2 text-xl text-center'
 			/>
 			<div>
-				{errorMessage && <span>{errorMessage}</span>}
+				{errorMessage
+					? <span>{errorMessage}</span>
+					: 'Enter a 13-digit EAN code'}
 			</div>
 		</main>
 	)
